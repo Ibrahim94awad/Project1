@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Services.Mock
 {
-    class MockCategoriesService : ICatogeries
+ public   class MockCategoriesService : ICatogeries
     {
         public bool CreateCatogery(Category category)
         {

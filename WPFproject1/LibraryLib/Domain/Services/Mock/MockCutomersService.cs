@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Services.Mock
 {
-    class MockCutomersService : ICutomers
+  public  class MockCutomersService : ICutomers
     {
         public bool CreateCutomber(string firstName, string lastName)
         {

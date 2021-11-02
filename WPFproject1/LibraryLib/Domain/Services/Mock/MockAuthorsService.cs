@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Services.Mock
 {
-    class MockAuthorsService : IAuthors
+  public  class MockAuthorsService : IAuthors
     {
         public bool CreateAuthor(Author author)
         {

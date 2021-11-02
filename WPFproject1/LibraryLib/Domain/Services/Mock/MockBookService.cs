@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Services.Mock
 {
-    public class MockBookService : IBooks
+  public  public class MockBookService : IBooks
     {
         public bool CreateBook(Book book)
         {

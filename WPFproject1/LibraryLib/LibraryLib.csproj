@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\MockDataSeeder.cs" />
     <Compile Include="Domain\Interfaces\IAuthors.cs" />
     <Compile Include="Domain\Interfaces\IBooks.cs" />
     <Compile Include="Domain\Interfaces\ICatogeries.cs" />
