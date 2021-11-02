@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
 {
-    class Book
+     public class Book
     {
+        public int Id { get; set; }
+        public string BookName { get; set; }
+        public Publisher publisher { get; set; }
+        public List<Author>Authors { get; set; }
+        public List<Category> Categories { get; set; }
+        public bool IsIssued { get; set; }
+
+
+
+       
     }
 }

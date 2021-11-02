@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
 {
-    class Cutomer
+   public class Cutomer
     {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

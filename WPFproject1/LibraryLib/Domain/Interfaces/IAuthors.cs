@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryLib
+namespace LibraryLib.Domain.Interfaces
 {
-    class LibraryContext
+    interface IAuthors
     {
-
     }
 }

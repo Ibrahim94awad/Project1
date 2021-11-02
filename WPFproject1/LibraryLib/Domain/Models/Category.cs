@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
 {
-    class Category
+   public class Category
     {
+        public int Id { get; set; }
+        public string CategoryName { get; set; }
     }
 }
