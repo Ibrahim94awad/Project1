@@ -43,7 +43,7 @@ namespace LibraryLib.Data
 
         };
 
-        public static List<Book> books = new List<Book>()
+        public static List<Book> Books = new List<Book>()
         {
             new Book{Id=0,BookName="Hamlet",
                 publisher=Publishers.ElementAt(0),

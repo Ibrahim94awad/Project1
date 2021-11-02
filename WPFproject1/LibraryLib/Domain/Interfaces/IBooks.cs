@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Interfaces
 {
-    interface IBooks
+  public  interface IBooks
     {
         //Create
         bool CreateBook(Book book);

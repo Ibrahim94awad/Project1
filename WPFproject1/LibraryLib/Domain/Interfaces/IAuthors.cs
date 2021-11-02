@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Interfaces
 {
-    interface IAuthors
+   public interface IAuthors
     {
         //create
         bool CreateAuthor(Author author);

@@ -7,15 +7,48 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lstAllBooks" HorizontalAlignment="Left" Height="100" Margin="46,92,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListBox x:Name="lstAllcutomers" HorizontalAlignment="Left" Height="100" Margin="242,92,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="lstAllBooks" ItemsSource="{Binding Allbooks}" HorizontalAlignment="Left" Height="175" Margin="46,92,0,0" VerticalAlignment="Top" Width="127">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding BookName}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="lstAllcutomers" ItemsSource="{ Binding Cutomers}" HorizontalAlignment="Left" Height="175" Margin="242,92,0,0" VerticalAlignment="Top" Width="172">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}"/>
+                        <Label Content="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Label Content="Alle Books:" HorizontalAlignment="Left" Margin="46,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.439,0.59"/>
         <Label Content="Issue Book:" HorizontalAlignment="Left" Margin="485,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.439,0.59"/>
         <Label Content="All custumers:" HorizontalAlignment="Left" Margin="266,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.439,0.59"/>
         <Label Content="Book:" HorizontalAlignment="Left" Margin="467,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.439,0.59"/>
         <Label Content="Cutomers:" HorizontalAlignment="Left" Margin="458,136,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.439,0.59"/>
-        <ComboBox x:Name="cmbavailabelBooks" HorizontalAlignment="Left" Margin="581,101,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="btnIssueBook" HorizontalAlignment="Left" Margin="581,140,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbavailabelBooks" ItemsSource="{Binding AvialableBooks}" HorizontalAlignment="Left" Margin="581,101,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding BookName}"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="cmbCustomer" ItemsSource="{Binding Cutomers}" HorizontalAlignment="Left" Margin="581,140,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}"></Label>
+                        <Label Content="{Binding LastName}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button x:Name="btnIssued" Content="Issued Book" HorizontalAlignment="Left" Margin="630,198,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

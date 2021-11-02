@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Interfaces
 {
-    interface ICatogeries
+   public interface ICatogeries
     {
         //create
         bool CreateCatogery(Category category);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Interfaces
 {
-    interface ICutomers
+  public  interface ICutomers
     {
         //Create
         bool CreateCutomer(Cutomer cutomer);
