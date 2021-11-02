@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace WPFproject1
     /// </summary>
     public partial class MainWindow : Window
     {
+        LibraryContext
         public MainWindow()
         {
             InitializeComponent();
