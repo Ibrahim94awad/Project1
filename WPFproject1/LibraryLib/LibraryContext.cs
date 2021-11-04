@@ -17,7 +17,7 @@ namespace LibraryLib
         private IBooks _booksService = null;
         private ICutomers _cutomersServices = null;
         private IPublishers _publishersService = null;
-        private ICatogeries _categeries = null;
+        private ICatogeries _categeriesService = null;
 
 
         private ObservableCollection<Book>allbooks =new ObservableCollection<Book>();
@@ -76,25 +76,128 @@ namespace LibraryLib
                 }
             }
         }
+        private ObservableCollection<Publisher> allpublishers = new ObservableCollection<Publisher>();
+        public ObservableCollection<Publisher> AllPublishers
+        {
+            get
+            {
+                return this.allpublishers;
+            }
+
+            set
+            {
+                if (value != this.allpublishers)
+                {
+                    this.allpublishers = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        private ObservableCollection<Author> allAuthors = new ObservableCollection<Author>();
+        public ObservableCollection<Author> AllAuthors
+        {
+            get
+            {
+                return this.allAuthors;
+            }
+
+            set
+            {
+                if (value != this.allAuthors)
+                {
+                    this.allAuthors = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        private ObservableCollection<Category> allCatogeries = new ObservableCollection<Category>();
+        public ObservableCollection<Category> AllCatogeries
+        {
+            get
+            {
+                return this.allCatogeries;
+            }
+
+            set
+            {
+                if (value != this.allCatogeries)
+                {
+                    this.allCatogeries = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
         public LibraryContext(IAuthors authorsService, IBooks booksService, ICatogeries catogeriesService,ICutomers cutomersService, IPublishers publishersService)
         {
             _authorsService = authorsService;
             _booksService = booksService;
-            _categeries = catogeriesService;
+            _categeriesService = catogeriesService;
             _cutomersServices = cutomersService;
             _publishersService = publishersService;
 
 
             GetBooks();
             GetCustomers();
+            GetPublisher();
+            GetAuthors();
+            GetCategories();
+            
         }
+
+        public void IssuedBook(Book book)
+        {
+
+            _booksService.IssuedBook(book);
+            GetBooks();
+
+        }
+
+        public void AddBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories, bool isIssued = false)
+        {
+            _booksService.CreateBook(bookName, publisher, authors, categories, isIssued);
+            GetBooks();
+
+        }
+
+        public void DeleteBook(Book book)
+        {
+            _booksService.Deletebook(book);
+            GetBooks();
+
+        }
+        public void GetPublisher()
+        {
+            AllPublishers = new ObservableCollection<Publisher>(_publishersService.GetAllPublisers());
+        }
+
+        public void GetAuthors(){
+
+
+            AllAuthors = new ObservableCollection<Author>(_authorsService.GetAllAuthors());
+        }
+
+        public void GetCategories()
+        {
+            AllCatogeries = new ObservableCollection<Category>(_categeriesService.GetAllcatogiers());
+        }
+        
 
         public void GetBooks()
         {
             Allbooks = new ObservableCollection<Book>(_booksService.GetAllBooks());
             AvialableBooks = new ObservableCollection<Book>(_booksService.GetallAvailableBooks());
 
+        }
+        public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories)
+        {
+            bool res= _booksService.CreateBook(bookName, publisher, authors, categories);
+            GetBooks();
+            return res;
+
+            
         }
         public void GetCustomers()
         {

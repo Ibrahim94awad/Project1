@@ -48,7 +48,8 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="btnIssued" Content="Issued Book" HorizontalAlignment="Left" Margin="630,198,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnIssued" Content="Issued Book" HorizontalAlignment="Left" Margin="630,198,0,0" VerticalAlignment="Top" Width="75" Click="btnIssued_Click"/>
+        <Button x:Name="btnBackoffice" Content="Back office" HorizontalAlignment="Left" Margin="699,381,0,0" VerticalAlignment="Top" Width="75" Click="btnBackoffice_Click"/>
 
     </Grid>
 </Window>

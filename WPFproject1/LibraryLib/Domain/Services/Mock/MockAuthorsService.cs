@@ -1,4 +1,5 @@
-﻿using LibraryLib.Domain.Interfaces;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Interfaces;
 using LibraryLib.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace LibraryLib.Domain.Services.Mock
 
         public List<Author> GetAllAuthors()
         {
-            throw new NotImplementedException();
+            return MockDataSeeder.Authors;
         }
 
         public Author GetAuthorById(int id)

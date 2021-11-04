@@ -1,0 +1,55 @@
+﻿<Window x:Class="WPFproject1.BackOffice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFproject1"
+        mc:Ignorable="d"
+        Title="BackOffice" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="lsbAllBooks" ItemsSource="{Binding Allbooks}" HorizontalAlignment="Left" Height="246" Margin="24,84,0,0" VerticalAlignment="Top" Width="172">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding BookName}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Label Content="All Books" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Add Book:" HorizontalAlignment="Left" Margin="471,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book Name:" HorizontalAlignment="Left" Margin="489,84,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbBookName" HorizontalAlignment="Left" Height="23" Margin="614,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbPublisher" ItemsSource="{Binding AllPublishers}" HorizontalAlignment="Left" Margin="614,112,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding PublisherName}"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Publisher" HorizontalAlignment="Left" Margin="489,116,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAddBook" Content="Add book" HorizontalAlignment="Left" Margin="659,227,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="139,358,0,0" Click="btnDelete_Click"/>
+        <ComboBox x:Name="cmbAuthors" ItemsSource="{Binding AllAuthors}" HorizontalAlignment="Left" Margin="614,139,0,0" VerticalAlignment="Top" Width="120" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirtsName}"></Label>
+                        <Label Content="{Binding LastName}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="cmbCategories" ItemsSource="{Binding AllCatogeries}" HorizontalAlignment="Left" Margin="614,166,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding CategoryName }"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Authors:" HorizontalAlignment="Left" Margin="489,148,0,0" VerticalAlignment="Top"/>
+        <Label Content="Categories:" HorizontalAlignment="Left" Margin="489,179,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

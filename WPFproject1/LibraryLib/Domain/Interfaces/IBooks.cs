@@ -28,8 +28,8 @@ namespace LibraryLib.Domain.Interfaces
         //Update
 
         bool UpdateBook();
-        bool IssuedBook();
-        bool IssuedBookbyID();
+        bool IssuedBook(Book book);
+        bool IssuedBookbyID(int id);
         bool ReturnBook(Book book);
         bool ReturnBookById(int id);
 

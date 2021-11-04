@@ -13,27 +13,40 @@ namespace LibraryLib.Domain.Services.Mock
     {
         public bool CreateBook(Book book)
         {
-            throw new NotImplementedException();
+            if (book.BookName==string.Empty||book.publisher==null||book.Authors.Count==0||book.Categories.Count==0)
+            {
+                return false;
+            }
+                MockDataSeeder.Books.Add(book);
+            return MockDataSeeder.Books.Contains(book);
         }
 
         public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
-            throw new NotImplementedException();
+           
+            Book newbook = new Book { Id = MockDataSeeder.Books.Count, BookName = bookName, publisher = publisher, Authors = authors, Categories = categories, IsIssued = isIssued };
+            return CreateBook(newbook);
+
         }
 
         public bool CreateBook(string bookName, int publisherId, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
-            throw new NotImplementedException();
+            Publisher publisher = MockDataSeeder.Publishers.Where(p => p.Id == publisherId).FirstOrDefault();
+            Book newbook = new Book { Id = MockDataSeeder.Books.Count, BookName = bookName, publisher = publisher, Authors = authors, Categories = categories, IsIssued = isIssued };
+            return CreateBook(newbook);
+
+
         }
 
         public bool Deletebook(Book book)
         {
-            throw new NotImplementedException();
+           return MockDataSeeder.Books.Remove(book);
         }
 
         public bool DeleteBookbyId(int id)
         {
-            throw new NotImplementedException();
+            Book book = MockDataSeeder.Books.Where(b => b.Id == id).FirstOrDefault();
+            return Deletebook(book);
         }
 
         public List<Book> GetallAvailableBooks()
@@ -98,14 +111,26 @@ namespace LibraryLib.Domain.Services.Mock
             throw new NotImplementedException();
         }
 
-        public bool IssuedBook()
+        public bool IssuedBook(Book book)
         {
-            throw new NotImplementedException();
+            book.IsIssued = true;
+            if (book.IsIssued==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            // tweede optie
+            // return book.IsIssued;
+           
         }
 
-        public bool IssuedBookbyID()
+        public bool IssuedBookbyID(int id)
         {
-            throw new NotImplementedException();
+            Book book = GetAllBooks().Where(b => b.Id == id).FirstOrDefault();
+            return IssuedBook(book);
         }
 
         public bool ReturnBook(Book book)

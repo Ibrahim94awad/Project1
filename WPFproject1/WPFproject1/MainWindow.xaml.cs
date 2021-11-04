@@ -1,4 +1,5 @@
 ﻿using LibraryLib;
+using LibraryLib.Domain.Models;
 using LibraryLib.Domain.Services.Mock;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,18 @@ namespace WPFproject1
             InitializeComponent();
 
             DataContext = context;
+        }
+
+        private void btnIssued_Click(object sender, RoutedEventArgs e)
+        {
+
+            context.IssuedBook((Book)cmbavailabelBooks.SelectedItem);
+        }
+
+        private void btnBackoffice_Click(object sender, RoutedEventArgs e)
+        {
+            BackOffice backOffice = new BackOffice(context);
+            backOffice.Show();
         }
     }
 }
