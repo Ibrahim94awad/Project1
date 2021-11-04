@@ -11,14 +11,17 @@ namespace LibraryLib.Domain.Services.Mock
 {
   public  class MockCutomersService : ICutomers
     {
-        public bool CreateCutomber(string firstName, string lastName)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public bool CreateCutomer(Cutomer cutomer)
         {
-            throw new NotImplementedException();
+            MockDataSeeder.Cutomers.Add(cutomer);
+            return MockDataSeeder.Cutomers.Contains(cutomer);
+        }
+        public bool CreateCutomber(string firstName, string lastName)
+        {
+            Cutomer newCustomer = new Cutomer { Id = MockDataSeeder.Cutomers.Count, FirstName = firstName, LastName = lastName };
+            return CreateCutomer(newCustomer);
         }
 
         public bool DeleteCutomer(Cutomer cutomer)

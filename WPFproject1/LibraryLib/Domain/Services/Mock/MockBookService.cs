@@ -40,6 +40,10 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool Deletebook(Book book)
         {
+            if (book.IsIssued==true)
+            {
+                return false;
+            }
            return MockDataSeeder.Books.Remove(book);
         }
 

@@ -13,12 +13,14 @@ namespace LibraryLib.Domain.Services.Mock
     {
         public bool CreateCatogery(Category category)
         {
-            throw new NotImplementedException();
+            MockDataSeeder.Categories.Add(category);
+            return MockDataSeeder.Categories.Contains(category);
         }
 
         public bool CreateCatogery(string name)
         {
-            throw new NotImplementedException();
+            Category newCategory = new Category { Id = MockDataSeeder.Categories.Count, CategoryName = name };
+            return CreateCatogery(newCategory);
         }
 
         public bool DeleteCategory(Category category)

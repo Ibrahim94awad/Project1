@@ -13,12 +13,14 @@ namespace LibraryLib.Domain.Services.Mock
     {
         public bool CreatePublisher(Publisher publisher)
         {
-            throw new NotImplementedException();
+            MockDataSeeder.Publishers.Add(publisher);
+            return MockDataSeeder.Publishers.Contains(publisher);
         }
 
         public bool CreatePublisher(string firstName)
         {
-            throw new NotImplementedException();
+            Publisher publisher = new Publisher { Id = MockDataSeeder.Publishers.Count, PublisherName = firstName };
+            return CreatePublisher(publisher);
         }
 
         public bool DeletePublisher(Publisher publisher)

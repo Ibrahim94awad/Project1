@@ -18,7 +18,8 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool CreateAuthor(string firstName, string lastName)
         {
-            throw new NotImplementedException();
+            Author newAuthor = new Author { Id = MockDataSeeder.Publishers.Count, FirstName = firstName, LastName = lastName };
+            return CreateAuthor(newAuthor);
         }
 
         public bool DeleteAuthor(Author author)

@@ -162,10 +162,16 @@ namespace LibraryLib
 
         }
 
-        public void DeleteBook(Book book)
+
+
+        public bool DeleteBook(Book book)
         {
-            _booksService.Deletebook(book);
+
+          bool res=  _booksService.Deletebook(book);
             GetBooks();
+
+            return res;
+           
 
         }
         public void GetPublisher()
@@ -184,6 +190,7 @@ namespace LibraryLib
             AllCatogeries = new ObservableCollection<Category>(_categeriesService.GetAllcatogiers());
         }
         
+     
 
         public void GetBooks()
         {
@@ -197,7 +204,24 @@ namespace LibraryLib
             GetBooks();
             return res;
 
-            
+           
+        }
+        public void CreateAuthor(string firstName,string lastName)
+        {
+            _authorsService.CreateAuthor(firstName, lastName);
+        }
+        public void CreateCategory(string CategoryName)
+        {
+            _categeriesService.CreateCatogery(CategoryName);
+        }
+        public void CreateCustomer(string firstName,string lastName)
+        {
+            _cutomersServices.CreateCutomber(firstName, lastName);
+        }
+
+        public void CreatePublisher(string publisherName)
+        {
+            _publishersService.CreatePublisher(publisherName);
         }
         public void GetCustomers()
         {

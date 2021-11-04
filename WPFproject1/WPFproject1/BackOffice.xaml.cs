@@ -49,13 +49,40 @@ namespace WPFproject1
         {
             if (lsbAllBooks.SelectedItem!=null)
             {
-            context.DeleteBook((Book)lsbAllBooks.SelectedItem);
+                bool res = context.DeleteBook((Book)lsbAllBooks.SelectedItem);
+
+                if (res==false)
+                {
+                    MessageBox.Show("book is isseud");
+
+                }
+               
 
             }
             else
             {
                 MessageBox.Show("Select a book first");
             }
+        }
+
+        private void btnAddPublisher_Click(object sender, RoutedEventArgs e)
+        {
+            context.CreatePublisher(txtPublisherName.Text);
+        }
+
+        private void btnAddCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            context.CreateCustomer(txtCustomerFirst.Text, txbcutomerLast.Text);
+        }
+
+        private void btnAddAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            context.CreateAuthor(txbAuthorFirst.Text, txbAuthorLast.Text);
+        }
+
+        private void btnAddCategory_Click(object sender, RoutedEventArgs e)
+        {
+            context.CreateCategory(txbCategoryName.Text);
         }
     }
 }
