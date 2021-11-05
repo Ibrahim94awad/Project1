@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
-{
+{[Serializable]
    public class Author
     {
         public int Id { get; set; }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
 {
+    [Serializable]
    public class Cutomer
     {
         public int Id { get; set; }

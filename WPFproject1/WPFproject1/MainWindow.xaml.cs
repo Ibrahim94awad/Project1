@@ -1,5 +1,6 @@
 ﻿using LibraryLib;
 using LibraryLib.Domain.Models;
+using LibraryLib.Domain.Services;
 using LibraryLib.Domain.Services.Mock;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,12 @@ namespace WPFproject1
     /// </summary>
     public partial class MainWindow : Window
     {
-        LibraryContext context = new LibraryContext(new MockAuthorsService(), new MockBookService(), new MockCategoriesService(), new MockCutomersService(), new MockpublisherService());
+        LibraryContext context = new LibraryContext(
+            new MockAuthorsService(), 
+            new FileOBooksService(),
+            new MockCategoriesService(), 
+            new MockCutomersService(), 
+            new MockpublisherService());
        
 
         public MainWindow()
