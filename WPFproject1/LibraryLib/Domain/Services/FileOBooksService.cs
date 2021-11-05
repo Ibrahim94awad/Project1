@@ -42,7 +42,12 @@ namespace LibraryLib.Domain.Services
 
         public bool Deletebook(Book book)
         {
-            throw new NotImplementedException();
+            Book x = books.Where(b => b.Id == book.Id).FirstOrDefault();
+            bool res=books.Remove(x);
+
+
+            SaveBook();
+            return res;
         }
 
         public bool DeleteBookbyId(int id)

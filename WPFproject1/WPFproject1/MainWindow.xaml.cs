@@ -25,11 +25,11 @@ namespace WPFproject1
     public partial class MainWindow : Window
     {
         LibraryContext context = new LibraryContext(
-            new MockAuthorsService(), 
+            new FileOAuthorService(),
             new FileOBooksService(),
-            new MockCategoriesService(), 
-            new MockCutomersService(), 
-            new MockpublisherService());
+            new FileOCategoryService(),
+            new FileOCustomerservice(),
+            new FileOPublisherservice());
        
 
         public MainWindow()
