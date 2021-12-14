@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFproject1", "WPFproject1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryLib", "LibraryLib\LibraryLib.csproj", "{A0192C13-20B2-405C-96BC-4AB978748DC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAppTests", "LibraryAppTests\LibraryAppTests.csproj", "{FDF0560F-782F-4ED7-977E-A4F672AF36BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A0192C13-20B2-405C-96BC-4AB978748DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0192C13-20B2-405C-96BC-4AB978748DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0192C13-20B2-405C-96BC-4AB978748DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF0560F-782F-4ED7-977E-A4F672AF36BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF0560F-782F-4ED7-977E-A4F672AF36BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF0560F-782F-4ED7-977E-A4F672AF36BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF0560F-782F-4ED7-977E-A4F672AF36BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

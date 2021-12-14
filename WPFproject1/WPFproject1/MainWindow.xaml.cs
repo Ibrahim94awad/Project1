@@ -50,5 +50,39 @@ namespace WPFproject1
             BackOffice backOffice = new BackOffice(context);
             backOffice.Show();
         }
+
+        private void btnDeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+            if ((Book)lstAllBooks.SelectedItem != null)
+            {
+                if (!context.DeleteBook((Book)lstAllBooks.SelectedItem))
+                {
+                    MessageBox.Show("Book is isseud");
+
+                }
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Select book");
+            }
+
+        }
+
+
+            private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstAllcutomers.SelectedItem != null)
+            {
+                context.DeleteCutomer((Cutomer)lstAllcutomers.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Select Customer");
+            }
+        }
     }
 }

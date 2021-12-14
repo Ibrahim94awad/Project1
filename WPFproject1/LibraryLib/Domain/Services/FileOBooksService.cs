@@ -1,4 +1,5 @@
-﻿using LibraryLib.Domain.Interfaces;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Interfaces;
 using LibraryLib.Domain.Models;
 using LibraryLib.Helpers;
 using System;
@@ -14,8 +15,9 @@ namespace LibraryLib.Domain.Services
     {
         //Path where to store books .txt file
         string loc = @"C:\\Csharp intacbrussel\\Book.txt";
-       // string loc = @"C:\\Book.txt";
-        private List<Book> books=new List<Book>();
+        // string loc = @"C:\\Book.txt";
+        private List<Book> books = new List<Book>();
+         
 
 
 
@@ -31,7 +33,7 @@ namespace LibraryLib.Domain.Services
         public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
             GetAllBooks();
-            Book newBook = new Book { Id = books.Count, BookName = bookName, publisher = publisher, Authors = authors, Categories = categories, IsIssued = isIssued };
+            Book newBook = new Book { Id =Helper.CalulateID(books), BookName = bookName, publisher = publisher, Authors = authors, Categories = categories, IsIssued = isIssued };
             return CreateBook(newBook);
         }
 
@@ -42,12 +44,29 @@ namespace LibraryLib.Domain.Services
 
         public bool Deletebook(Book book)
         {
+
+
             Book x = books.Where(b => b.Id == book.Id).FirstOrDefault();
-            bool res=books.Remove(x);
+          //  bool res = books.Remove(x);
+
+            if (x.IsIssued==true)
+            {
+                return false;
+
+            }
+            else
+            {
+                books.Remove(x);
+                SaveBook();
+
+                return true;
+
+            }
 
 
-            SaveBook();
-            return res;
+
+           // return res;
+           
         }
 
         public bool DeleteBookbyId(int id)
@@ -82,8 +101,8 @@ namespace LibraryLib.Domain.Services
             }
             else
             {
-                Serializator.serialize(loc, new List<Book>());
-                return new List<Book>();
+                Serializator.serialize(loc, MockDataSeeder.Books);
+                return MockDataSeeder.Books;
             }
         }
 

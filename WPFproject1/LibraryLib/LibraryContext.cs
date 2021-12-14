@@ -209,23 +209,49 @@ namespace LibraryLib
         public void CreateAuthor(string firstName,string lastName)
         {
             _authorsService.CreateAuthor(firstName, lastName);
+            GetAuthors();
         }
         public void CreateCategory(string CategoryName)
         {
             _categeriesService.CreateCatogery(CategoryName);
+            GetCategories();
         }
         public void CreateCustomer(string firstName,string lastName)
         {
             _cutomersServices.CreateCutomber(firstName, lastName);
+            GetCustomers();
         }
+
 
         public void CreatePublisher(string publisherName)
         {
             _publishersService.CreatePublisher(publisherName);
+            GetPublisher();
         }
         public void GetCustomers()
         {
             Cutomers = new ObservableCollection<Cutomer>(_cutomersServices.GetAllcustomers());
+        }
+
+        public void DeleteCutomer(Cutomer cutomer)
+        {
+            _cutomersServices.DeleteCutomer(cutomer);
+            GetCustomers();
+        }
+        public void DeletePublisher(Publisher publisher)
+        {
+            _publishersService.DeletePublisher(publisher);
+            GetPublisher();
+        }
+        public void DeleteCategory(Category category)
+        {
+            _categeriesService.DeleteCategory(category);
+            GetCategories();
+        }
+        public void DeleteAuthor(Author author)
+        {
+            _authorsService.DeleteAuthor(author);
+            GetAuthors();
         }
         // Interface implementation
         public event PropertyChangedEventHandler PropertyChanged;
@@ -235,6 +261,19 @@ namespace LibraryLib
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void Clear()
+        {
+            AllAuthors.Clear();
+            Allbooks.Clear();
+            Cutomers.Clear();
+            AllCatogeries.Clear();
+            AllPublishers.Clear();
+            GetAuthors();
+            GetBooks();
+            GetCategories();
+            GetPublisher();
+            GetCustomers();
+        }
      
 
     }

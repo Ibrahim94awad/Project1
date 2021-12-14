@@ -84,5 +84,32 @@ namespace WPFproject1
         {
             context.CreateCategory(txbCategoryName.Text);
         }
+
+        private void btnDeletePublisher_Click(object sender, RoutedEventArgs e)
+        {
+            context.DeletePublisher((Publisher)lsbPublishers.SelectedItem);
+
+        }
+
+        private void btnDeleteCatories_Click(object sender, RoutedEventArgs e)
+        {
+            context.DeleteCategory((Category)lsbCategories.SelectedItem);
+        }
+
+        private void btnDeleteAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            context.DeleteAuthor((Author)lsbAuthors.SelectedItem);
+        }
+
+        private void btbDeleleCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            context.DeleteCutomer((Cutomer)lsbCustomers.SelectedItem);
+
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            context.Clear();
+        }
     }
 }

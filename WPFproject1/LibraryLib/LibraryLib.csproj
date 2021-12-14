@@ -48,6 +48,7 @@
     <Compile Include="Domain\Interfaces\ICutomers.cs" />
     <Compile Include="Domain\Interfaces\IPublishers.cs" />
     <Compile Include="Domain\Models\Author.cs" />
+    <Compile Include="Domain\Models\BaseModel.cs" />
     <Compile Include="Domain\Models\Book.cs" />
     <Compile Include="Domain\Models\Category.cs" />
     <Compile Include="Domain\Models\Cutomer.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Domain\Services\Mock\MockCategoriesService.cs" />
     <Compile Include="Domain\Services\Mock\MockCutomersService.cs" />
     <Compile Include="Domain\Services\Mock\MockpublisherService.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\Serializator.cs" />
     <Compile Include="LibraryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -112,7 +112,8 @@ namespace LibraryLib.Domain.Services.Mock
 
         public Book GetbookbyId(int id)
         {
-            throw new NotImplementedException();
+            Book book = GetAllBooks().Where(b => b.Id == id).FirstOrDefault();
+            return book;
         }
 
         public bool IssuedBook(Book book)

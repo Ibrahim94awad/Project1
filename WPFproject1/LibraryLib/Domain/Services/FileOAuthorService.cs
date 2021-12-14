@@ -14,6 +14,11 @@ namespace LibraryLib.Domain.Services
     {
         string loc = @"C:\\Csharp intacbrussel\\Authors.txt";
         private List<Author> authors = new List<Author>();
+  
+        public FileOAuthorService()
+        {
+           
+        }
         public bool CreateAuthor(Author author)
         {
             GetAllAuthors();

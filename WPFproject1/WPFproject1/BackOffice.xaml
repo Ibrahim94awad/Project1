@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFproject1"
         mc:Ignorable="d"
-        Title="BackOffice" Height="532" Width="1050">
+        Title="BackOffice" Height="666" Width="1050">
     <Grid>
         <ListBox x:Name="lsbAllBooks" ItemsSource="{Binding Allbooks}" HorizontalAlignment="Left" Height="246" Margin="24,84,0,0" VerticalAlignment="Top" Width="172">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
+                        <Label Content="{Binding Id}"></Label>
                         <Label Content="{Binding BookName}"></Label>
                     </StackPanel>
                 </DataTemplate>
@@ -18,20 +19,20 @@
         </ListBox>
 
         <Label Content="All Books" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Add Book:" HorizontalAlignment="Left" Margin="256,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="Book Name:" HorizontalAlignment="Left" Margin="274,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbBookName" HorizontalAlignment="Left" Height="23" Margin="399,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cmbPublisher" ItemsSource="{Binding AllPublishers}" HorizontalAlignment="Left" Margin="399,193,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Add Book:" HorizontalAlignment="Left" Margin="281,414,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book Name:" HorizontalAlignment="Left" Margin="299,460,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbBookName" HorizontalAlignment="Left" Height="23" Margin="424,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbPublisher" ItemsSource="{Binding AllPublishers}" HorizontalAlignment="Left" Margin="424,488,0,0" VerticalAlignment="Top" Width="120">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding PublisherName}"></Label>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content="Publisher" HorizontalAlignment="Left" Margin="274,197,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddBook" Content="Add book" HorizontalAlignment="Left" Margin="421,295,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="75,335,0,0" Click="btnDelete_Click"/>
-        <ComboBox x:Name="cmbAuthors" ItemsSource="{Binding AllAuthors}" HorizontalAlignment="Left" Margin="399,220,0,0" VerticalAlignment="Top" Width="120" >
+        <Label Content="Publisher" HorizontalAlignment="Left" Margin="299,492,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAddBook" Content="Add book" HorizontalAlignment="Left" Margin="446,590,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="75,341,0,0" Click="btnDelete_Click"/>
+        <ComboBox x:Name="cmbAuthors" ItemsSource="{Binding AllAuthors}" HorizontalAlignment="Left" Margin="424,515,0,0" VerticalAlignment="Top" Width="120" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -41,35 +42,83 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="cmbCategories" ItemsSource="{Binding AllCatogeries}" HorizontalAlignment="Left" Margin="399,247,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="cmbCategories" ItemsSource="{Binding AllCatogeries}" HorizontalAlignment="Left" Margin="424,542,0,0" VerticalAlignment="Top" Width="120">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding CategoryName }"></Label>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content="Authors:" HorizontalAlignment="Left" Margin="274,229,0,0" VerticalAlignment="Top"/>
-        <Label Content="Categories:" HorizontalAlignment="Left" Margin="274,260,0,0" VerticalAlignment="Top"/>
-        <Label Content="Add Publisher:" HorizontalAlignment="Left" Margin="580,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="PublisherName:" HorizontalAlignment="Left" Margin="526,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPublisherName" HorizontalAlignment="Left" Height="23" Margin="624,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddPublisher" Content="Add Publisher" HorizontalAlignment="Left" Margin="645,197,0,0" VerticalAlignment="Top" Width="84" Click="btnAddPublisher_Click" />
-        <Label Content="Add Customer:" HorizontalAlignment="Left" Margin="794,127,0,0" VerticalAlignment="Top"/>
-        <Label Content="FirstName:" HorizontalAlignment="Left" Margin="749,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCustomerFirst" HorizontalAlignment="Left" Height="23" Margin="830,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="844,232,0,0" VerticalAlignment="Top" Width="75" Click="btnAddCustomer_Click"/>
-        <Label Content="Add Category:" HorizontalAlignment="Left" Margin="618,273,0,0" VerticalAlignment="Top"/>
-        <Label Content="Category Name:" HorizontalAlignment="Left" Margin="552,306,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbCategoryName" HorizontalAlignment="Left" Height="23" Margin="648,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddCategory" Content="Add category" HorizontalAlignment="Left" Margin="669,335,0,0" VerticalAlignment="Top" Width="75" Click="btnAddCategory_Click"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="749,197,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbcutomerLast" HorizontalAlignment="Left" Height="23" Margin="830,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Add Author:" HorizontalAlignment="Left" Margin="864,281,0,0" VerticalAlignment="Top"/>
-        <Label Content="First Name:" HorizontalAlignment="Left" Margin="802,306,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbAuthorFirst" HorizontalAlignment="Left" Height="23" Margin="875,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddAuthor" Content="Add Author" HorizontalAlignment="Left" Margin="875,363,0,0" VerticalAlignment="Top" Width="75" Click="btnAddAuthor_Click"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="802,332,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbAuthorLast" HorizontalAlignment="Left" Height="23" Margin="875,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Authors:" HorizontalAlignment="Left" Margin="299,524,0,0" VerticalAlignment="Top"/>
+        <Label Content="Categories:" HorizontalAlignment="Left" Margin="299,555,0,0" VerticalAlignment="Top"/>
+        <Label Content="Add Publisher:" HorizontalAlignment="Left" Margin="619,383,0,0" VerticalAlignment="Top"/>
+        <Label Content="PublisherName:" HorizontalAlignment="Left" Margin="565,414,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPublisherName" HorizontalAlignment="Left" Height="23" Margin="663,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddPublisher" Content="Add Publisher" HorizontalAlignment="Left" Margin="684,446,0,0" VerticalAlignment="Top" Width="84" Click="btnAddPublisher_Click" />
+        <Label Content="Add Customer:" HorizontalAlignment="Left" Margin="833,376,0,0" VerticalAlignment="Top"/>
+        <Label Content="FirstName:" HorizontalAlignment="Left" Margin="788,414,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCustomerFirst" HorizontalAlignment="Left" Height="23" Margin="869,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="883,481,0,0" VerticalAlignment="Top" Width="75" Click="btnAddCustomer_Click"/>
+        <Label Content="Add Category:" HorizontalAlignment="Left" Margin="657,522,0,0" VerticalAlignment="Top"/>
+        <Label Content="Category Name:" HorizontalAlignment="Left" Margin="591,555,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbCategoryName" HorizontalAlignment="Left" Height="23" Margin="687,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddCategory" Content="Add category" HorizontalAlignment="Left" Margin="708,584,0,0" VerticalAlignment="Top" Width="75" Click="btnAddCategory_Click"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="788,446,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbcutomerLast" HorizontalAlignment="Left" Height="23" Margin="869,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Add Author:" HorizontalAlignment="Left" Margin="903,530,0,0" VerticalAlignment="Top"/>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="841,555,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbAuthorFirst" HorizontalAlignment="Left" Height="23" Margin="914,558,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddAuthor" Content="Add Author" HorizontalAlignment="Left" Margin="914,612,0,0" VerticalAlignment="Top" Width="75" Click="btnAddAuthor_Click"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="841,581,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbAuthorLast" HorizontalAlignment="Left" Height="23" Margin="914,584,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lsbPublishers" ItemsSource="{Binding AllPublishers}" HorizontalAlignment="Left" Height="246" Margin="225,84,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.14,0.51">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding PublisherName}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Publishers:" HorizontalAlignment="Left" Margin="274,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Categories:" HorizontalAlignment="Left" Margin="705,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.921,0.385"/>
+        <Label Content="Authors:" HorizontalAlignment="Left" Margin="515,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,0.462"/>
+        <ListBox  x:Name="lsbAuthors" ItemsSource="{Binding AllAuthors}" HorizontalAlignment="Left" Height="246" Margin="446,85,0,0" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.14,0.51">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+
+                        <Label Content="{Binding FirstName}"></Label>
+                        <Label Content="{Binding FirstName}"></Label>
+
+
+                    </StackPanel>
+                   
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="lsbCategories" ItemsSource="{Binding AllCatogeries}" HorizontalAlignment="Left" Height="246" Margin="647,85,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.14,0.51">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding CategoryName}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Customers:" HorizontalAlignment="Left" Margin="869,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.921,0.385"/>
+        <ListBox x:Name="lsbCustomers" ItemsSource="{Binding Cutomers}" HorizontalAlignment="Left" Height="246" Margin="856,85,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.14,0.51">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}"></Label>
+                        <Label Content="{Binding LastName}"></Label>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnDeletePublisher" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="251,341,0,0" Click="btnDeletePublisher_Click" />
+        <Button x:Name="btnDeleteAuthor" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="503,336,0,0" Click="btnDeleteAuthor_Click" />
+        <Button x:Name="btnDeleteCatories" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="693,336,0,0" Click="btnDeleteCatories_Click" />
+        <Button x:Name="btbDeleleCustomers" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="883,341,0,0" Click="btbDeleleCustomers_Click" />
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="112,417,0,0" VerticalAlignment="Top" Width="75" Click="btnClear_Click"/>
 
     </Grid>
 </Window>

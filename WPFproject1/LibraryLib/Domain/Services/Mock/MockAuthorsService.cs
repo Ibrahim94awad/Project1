@@ -39,7 +39,8 @@ namespace LibraryLib.Domain.Services.Mock
 
         public Author GetAuthorById(int id)
         {
-            throw new NotImplementedException();
+            Author author = GetAllAuthors().Where(b => b.Id == id).FirstOrDefault();
+            return author;
         }
 
         public bool UpdateAuthor(Author author)

@@ -50,6 +50,8 @@
         </ComboBox>
         <Button x:Name="btnIssued" Content="Issued Book" HorizontalAlignment="Left" Margin="630,198,0,0" VerticalAlignment="Top" Width="75" Click="btnIssued_Click"/>
         <Button x:Name="btnBackoffice" Content="Back office" HorizontalAlignment="Left" Margin="699,381,0,0" VerticalAlignment="Top" Width="75" Click="btnBackoffice_Click"/>
+        <Button x:Name="btnDeleteCustomer" Content="DeleteCustomer" HorizontalAlignment="Left" Margin="287,272,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteCustomer_Click"/>
+        <Button x:Name="btnDeleteBook" Content="DeleteBook" HorizontalAlignment="Left" Margin="66,272,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteBook_Click"/>
 
     </Grid>
 </Window>

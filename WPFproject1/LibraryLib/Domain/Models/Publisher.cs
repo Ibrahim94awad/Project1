@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace LibraryLib.Domain.Models
 {
     [Serializable]
-  public  class Publisher
+  public  class Publisher:BaseModel
     {
-        public int Id { get; set; }
         public string PublisherName { get; set; }
     }
 }
